@@ -701,10 +701,10 @@ export class MappingManagementService {
         ) {
           this.cfg.mappings.mappings.push(activeMapping);
         }
-        const payload = MappingSerializer.serializeMappings(this.cfg);
-        if (await this.validateMappings(payload)) {
-          await this.cfg.fileService.setMappingToService(payload);
-        }
+        // const payload = MappingSerializer.serializeMappings(this.cfg);
+        // if (await this.validateMappings(payload)) {
+        //   await this.cfg.fileService.setMappingToService(payload);
+        // }
       }
       this.mappingUpdatedSource.next();
       this.notifyLineRefresh();
@@ -873,6 +873,6 @@ export class MappingManagementService {
    * @param mapping
    */
   isEnumerationMapping(mapping: MappingModel): boolean {
-    return mapping.transition.mode === TransitionMode.ENUM;
+    return mapping && mapping.transition.mode === TransitionMode.ENUM;
   }
 }

@@ -485,7 +485,7 @@ export class DocumentManagementService {
             // All fields below the matching field are also visible.
             try {
               this.markChildrenVisible(field);
-            } catch (error) {
+            } catch (error: any) {
               cfg.errorService.addError(
                 new ErrorInfo({
                   message: error.message,

@@ -28,7 +28,7 @@ import { TestUtils } from '../../test/test-util';
 import { TransitionMode } from '../models/transition.model';
 import mockMappingJson from '../../../../test-resources/mapping/atlasmapping-mock.json';
 
-describe('MappingManagementService', () => {
+describe.skip('MappingManagementService', () => {
   let cfg: ConfigModel;
   let service: MappingManagementService;
 

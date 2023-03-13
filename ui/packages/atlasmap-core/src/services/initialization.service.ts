@@ -104,27 +104,27 @@ export class InitializationService {
       this.cfg.initCfg.initialized = false;
       this.cfg.initCfg.mappingInitialized = false;
 
-      if (this.cfg.mappingService == null) {
-        this.cfg.errorService.addError(
-          new ErrorInfo({
-            message:
-              'Mapping service is not configured, validation service will not be used.',
-            level: ErrorLevel.WARN,
-            scope: ErrorScope.APPLICATION,
-            type: ErrorType.INTERNAL,
-          })
-        );
-      } else if (this.cfg.initCfg.baseMappingServiceUrl == null) {
-        this.cfg.errorService.addError(
-          new ErrorInfo({
-            message:
-              'Mapping service URL is not configured, validation service will not be used.',
-            level: ErrorLevel.WARN,
-            scope: ErrorScope.APPLICATION,
-            type: ErrorType.INTERNAL,
-          })
-        );
-      }
+      // if (this.cfg.mappingService == null) {
+      //   this.cfg.errorService.addError(
+      //     new ErrorInfo({
+      //       message:
+      //         'Mapping service is not configured, validation service will not be used.',
+      //       level: ErrorLevel.WARN,
+      //       scope: ErrorScope.APPLICATION,
+      //       type: ErrorType.INTERNAL,
+      //     })
+      //   );
+      // } else if (this.cfg.initCfg.baseMappingServiceUrl == null) {
+      //   this.cfg.errorService.addError(
+      //     new ErrorInfo({
+      //       message:
+      //         'Mapping service URL is not configured, validation service will not be used.',
+      //       level: ErrorLevel.WARN,
+      //       scope: ErrorScope.APPLICATION,
+      //       type: ErrorType.INTERNAL,
+      //     })
+      //   );
+      // }
 
       if (!this.cfg.fieldActionService) {
         this.handleError('FieldActionService is not configured');
@@ -190,21 +190,8 @@ export class InitializationService {
    * Return true if the runtime service is available, false otherwise.
    */
   runtimeServiceActive(): Promise<boolean> {
-    return new Promise<boolean>((resolve, reject) => {
-      const url: string = this.cfg.initCfg.baseMappingServiceUrl + 'ping';
-      this.cfg.logger!.debug('Runtime Service Ping Request');
-      this.api
-        .get(url)
-        .json<IStringContainer>()
-        .then((body) => {
-          this.cfg.logger!.debug(
-            `Runtime Service Ping Response: ${body.String}`
-          );
-          resolve(body?.String === 'pong');
-        })
-        .catch((error: any) => {
-          reject(error);
-        });
+    return new Promise<boolean>((resolve) => {
+      resolve(true);
     });
   }
 

@@ -18,57 +18,33 @@ import { boolean, text } from '@storybook/addon-knobs';
 
 import { Atlasmap } from './Atlasmap';
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-import { html } from '../stories/htmlKnob';
 
-const sampleExternalDocument = JSON.stringify(
-  {
-    documentId: 'i-M5XxdCeWJ837juDzeM3z',
-    initialMappings:
-      '{"AtlasMapping":{"jsonType":"io.atlasmap.v2.AtlasMapping","dataSource":[{"jsonType":"io.atlasmap.json.v2.JsonDataSource","id":"i-M5XxQUHWJ837juDzeLrz","uri":"atlas:json:i-M5XxQUHWJ837juDzeLrz","dataSourceType":"SOURCE"},{"jsonType":"io.atlasmap.v2.DataSource","id":"-M5XxkSP4RiiMiYC85vx","uri":"atlas:java?className=io.syndesis.connector.slack.SlackPlainMessage","dataSourceType":"TARGET"}],"mappings":{"mapping":[{"jsonType":"io.atlasmap.v2.Mapping","id":"mapping.900920","inputField":[{"jsonType":"io.atlasmap.json.v2.JsonField","name":"name","path":"/body/name","fieldType":"STRING","docId":"i-M5XxQUHWJ837juDzeLrz","userCreated":false}],"outputField":[{"jsonType":"io.atlasmap.java.v2.JavaField","name":"message","path":"/message","fieldType":"STRING","docId":"-M5XxkSP4RiiMiYC85vx"}]}]},"name":"UI.0","lookupTables":{"lookupTable":[]},"constants":{"constant":[]},"properties":{"property":[]}}}',
-    inputDocuments: [
-      {
-        dataShape: {
-          name: 'Request',
-          description: 'API request payload',
-          kind: 'json-schema',
-          specification:
-            '{"$schema":"http://json-schema.org/schema#","type":"object","$id":"io:syndesis:wrapped","properties":{"body":{"type":"object","description":"","properties":{"name":{"type":"string"}},"example":{"name":"gary"}}}}',
-          metadata: { unified: 'true' },
-        },
-        description: 'API request payload',
-        id: 'i-M5XxQUHWJ837juDzeLrz',
-        inspectionResult: '',
-        inspectionSource:
-          '{"$schema":"http://json-schema.org/schema#","type":"object","$id":"io:syndesis:wrapped","properties":{"body":{"type":"object","description":"","properties":{"name":{"type":"string"}},"example":{"name":"gary"}}}}',
-        name: '1 - Request',
-        showFields: true,
-        documentType: 'JSON',
-        inspectionType: 'SCHEMA',
-      },
-    ],
-    outputDocument: {
-      dataShape: {
-        name: 'Message',
-        kind: 'java',
-        type: 'io.syndesis.connector.slack.SlackPlainMessage',
-        specification:
-          '{"JavaClass":{"jsonType":"io.atlasmap.java.v2.JavaClass","collectionType":"NONE","path":"/","fieldType":"COMPLEX","modifiers":{"modifier":["PUBLIC"]},"className":"io.syndesis.connector.slack.SlackPlainMessage","canonicalClassName":"io.syndesis.connector.slack.SlackPlainMessage","primitive":false,"synthetic":false,"javaEnumFields":{"javaEnumField":[]},"javaFields":{"javaField":[{"jsonType":"io.atlasmap.java.v2.JavaField","path":"/message","status":"SUPPORTED","fieldType":"STRING","modifiers":{"modifier":["PRIVATE"]},"name":"message","className":"java.lang.String","canonicalClassName":"java.lang.String","getMethod":"getMessage","setMethod":"setMessage","primitive":true,"synthetic":false}]},"packageName":"io.syndesis.connector.slack","annotation":false,"annonymous":false,"enumeration":false,"localClass":false,"memberClass":false,"uri":"atlas:java?className=io.syndesis.connector.slack.SlackPlainMessage","interface":false}}',
-      },
-      description: '',
-      id: '-M5XxkSP4RiiMiYC85vx',
+const sampleExternalDocument = {
+  documentId: 'i-M5XxdCeWJ837juDzeM3z',
+  initialMappings: '',
+  inputDocuments: [
+    {
+      description: 'this is input',
+      id: '984792308230-input',
+      name: 'Comments JSON instance',
       inspectionResult:
-        '{"JavaClass":{"jsonType":"io.atlasmap.java.v2.JavaClass","collectionType":"NONE","path":"/","fieldType":"COMPLEX","modifiers":{"modifier":["PUBLIC"]},"className":"io.syndesis.connector.slack.SlackPlainMessage","canonicalClassName":"io.syndesis.connector.slack.SlackPlainMessage","primitive":false,"synthetic":false,"javaEnumFields":{"javaEnumField":[]},"javaFields":{"javaField":[{"jsonType":"io.atlasmap.java.v2.JavaField","path":"/message","status":"SUPPORTED","fieldType":"STRING","modifiers":{"modifier":["PRIVATE"]},"name":"message","className":"java.lang.String","canonicalClassName":"java.lang.String","getMethod":"getMessage","setMethod":"setMessage","primitive":true,"synthetic":false}]},"packageName":"io.syndesis.connector.slack","annotation":false,"annonymous":false,"enumeration":false,"localClass":false,"memberClass":false,"uri":"atlas:java?className=io.syndesis.connector.slack.SlackPlainMessage","interface":false}}',
-      inspectionSource: 'io.syndesis.connector.slack.SlackPlainMessage',
-      name: '2 - Message',
+        '{"JsonInspectionResponse":{"jsonType":"io.atlasmap.json.v2.JsonInspectionResponse","jsonDocument":{"jsonType":"io.atlasmap.json.v2.JsonDocument","fields":{"field":[{"jsonType":"io.atlasmap.json.v2.JsonComplexType","path":"/address","status":"SUPPORTED","fieldType":"COMPLEX","name":"address","jsonFields":{"jsonField":[{"jsonType":"io.atlasmap.json.v2.JsonComplexType","path":"/address/geo","status":"SUPPORTED","fieldType":"COMPLEX","name":"geo","jsonFields":{"jsonField":[{"jsonType":"io.atlasmap.json.v2.JsonField","value":"","path":"/address/geo/latitude","status":"SUPPORTED","fieldType":"STRING","name":"latitude"}]}}]}}]}},"executionTime":1}}',
       showFields: true,
-      documentType: 'JAVA',
-      inspectionType: 'JAVA_CLASS',
+      documentType: 'JSON',
+      inspectionType: 'INSTANCE',
     },
+  ],
+  outputDocument: {
+    description: 'this is output',
+    id: '984792308230-output',
+    name: 'Comments JSON instance',
+    inspectionResult:
+      '{"JsonInspectionResponse":{"jsonType":"io.atlasmap.json.v2.JsonInspectionResponse","jsonDocument":{"jsonType":"io.atlasmap.json.v2.JsonDocument","fields":{"field":[{"jsonType":"io.atlasmap.json.v2.JsonComplexType","path":"/pegaaddress_1DF","status":"SUPPORTED","fieldType":"COMPLEX","name":"pegaaddress_1DF","jsonFields":{"jsonField":[{"jsonType":"io.atlasmap.json.v2.JsonComplexType","path":"/pegaaddress_1DF/PGeo_1DF","status":"SUPPORTED","fieldType":"COMPLEX","name":"PGeo_1DF","jsonFields":{"jsonField":[{"jsonType":"io.atlasmap.json.v2.JsonField","value":"","path":"/pegaaddress_1DF/PGeo_1DF/PLat_1DF","status":"SUPPORTED","fieldType":"STRING","name":"PLat_1DF"}]}}]}}]}},"executionTime":0}}',
+    showFields: true,
+    documentType: 'JSON',
+    inspectionType: 'INSTANCE',
   },
-  null,
-  2,
-);
+};
 
 const obj = {
   title: 'AtlasMap|Demo',
@@ -77,49 +53,40 @@ export default obj;
 
 export const wiredToTheBackend = () => (
   <AtlasmapProvider
-    baseJavaInspectionServiceUrl={text(
-      'baseJavaInspectionServiceUrl',
-      'http://localhost:8585/v2/atlas/java/',
-    )}
-    baseXMLInspectionServiceUrl={text(
-      'baseXMLInspectionServiceUrl',
-      'http://localhost:8585/v2/atlas/xml/',
-    )}
-    baseJSONInspectionServiceUrl={text(
-      'baseJSONInspectionServiceUrl',
-      'http://localhost:8585/v2/atlas/json/',
-    )}
-    baseCSVInspectionServiceUrl={text(
-      'baseCSVInspectionServiceUrl',
-      'http://localhost:8585/v2/atlas/csv/',
-    )}
-    baseMappingServiceUrl={text(
-      'baseMappingServiceUrl',
-      'http://localhost:8585/v2/atlas/',
-    )}
+    baseJavaInspectionServiceUrl=""
+    baseXMLInspectionServiceUrl=""
+    baseJSONInspectionServiceUrl="http://localhost:8585/v2/atlas/json/"
+    baseCSVInspectionServiceUrl=""
+    baseMappingServiceUrl="http://localhost:8585/v2/atlas/"
     logLevel={text('logLevel', 'info')}
-    onMappingChange={action('onMappingChange')}
+    externalDocument={
+      sampleExternalDocument as IAtlasmapProviderProps['externalDocument']
+    }
+    onMappingChange={(mapping) => console.log(mapping)}
   >
     <Atlasmap
       allowImport={boolean('allow Import', true)}
-      allowExport={boolean('allow Export', true)}
-      allowReset={boolean('allow Reset', true)}
+      allowExport={boolean('allow Export', false)}
+      allowReset={boolean('allow Reset', false)}
       allowDelete={boolean('allow Delete', true)}
-      allowCustomJavaClasses={boolean('allow Custom Java Classes', true)}
+      allowCustomJavaClasses={boolean('allow Custom Java Classes', false)}
       toolbarOptions={{
         showToggleMappingPreviewToolbarItem: boolean(
           'showToggleMappingPreviewToolbarItem',
-          true,
+          false,
         ),
         showMappingTableViewToolbarItem: boolean(
           'showToggleMappingTableToolbarItem',
-          true,
+          false,
         ),
         showNamespaceTableViewToolbarItem: boolean(
           'showToggleNamespaceTableToolbarItem',
-          true,
+          false,
         ),
-        showToggleTypesToolbarItem: boolean('showToggleTypesToolbarItem', true),
+        showToggleTypesToolbarItem: boolean(
+          'showToggleTypesToolbarItem',
+          false,
+        ),
         showToggleMappedFieldsToolbarItem: boolean(
           'showToggleMappedFieldsToolbarItem',
           true,
@@ -132,51 +99,3 @@ export const wiredToTheBackend = () => (
     />
   </AtlasmapProvider>
 );
-
-export const embeddedInSyndesis = () => {
-  const externalDocumentFromKnob = html(
-    'External document',
-    sampleExternalDocument,
-  );
-  let externalDocument: IAtlasmapProviderProps['externalDocument'];
-  try {
-    externalDocument = JSON.parse(externalDocumentFromKnob);
-  } catch (e) {
-    // do nothing
-  }
-  return (
-    <AtlasmapProvider
-      baseJavaInspectionServiceUrl={text(
-        'baseJavaInspectionServiceUrl',
-        'http://localhost:8585/v2/atlas/java/',
-      )}
-      baseXMLInspectionServiceUrl={text(
-        'baseXMLInspectionServiceUrl',
-        'http://localhost:8585/v2/atlas/xml/',
-      )}
-      baseJSONInspectionServiceUrl={text(
-        'baseJSONInspectionServiceUrl',
-        'http://localhost:8585/v2/atlas/json/',
-      )}
-      baseCSVInspectionServiceUrl={text(
-        'baseCSVInspectionServiceUrl',
-        'http://localhost:8585/v2/atlas/csv/',
-      )}
-      baseMappingServiceUrl={text(
-        'baseMappingServiceUrl',
-        'http://localhost:8585/v2/atlas/',
-      )}
-      logLevel={text('logLevel', 'info')}
-      externalDocument={externalDocument}
-      onMappingChange={action('onMappingChange')}
-    >
-      <Atlasmap
-        allowImport={false}
-        allowExport={false}
-        allowReset={false}
-        allowDelete={false}
-        allowCustomJavaClasses={false}
-      />
-    </AtlasmapProvider>
-  );
-};

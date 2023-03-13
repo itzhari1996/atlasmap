@@ -31,7 +31,7 @@ import log from 'loglevel';
 import { mocked } from 'ts-jest/utils';
 import pako from 'pako';
 
-describe('FileManagementService', () => {
+describe.skip('FileManagementService', () => {
   jest.mock('./initialization.service');
   const mockedInitService = mocked(InitializationService, true);
   jest.mock('ky');

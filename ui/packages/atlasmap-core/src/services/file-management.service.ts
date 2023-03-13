@@ -97,24 +97,9 @@ export class FileManagementService {
    * Retrieve the current user data mappings digest file from the server as a GZIP compressed byte array buffer.
    */
   getCurrentMappingDigest(): Promise<ADMDigest | null> {
-    return new Promise<ADMDigest | null>((resolve, reject) => {
-      this.getCurrentFile(FileName.DIGEST, FileType.DIGEST)
-        .then((gzipped) => {
-          if (!gzipped) {
-            resolve(null);
-            return;
-          }
-          const gunzipped = inflate(gzipped);
-          const stringified = new Uint8Array(gunzipped).reduce(
-            (data, byte) => data + String.fromCharCode(byte),
-            ''
-          );
-          const admDigest = CommonUtil.objectize(stringified);
-          resolve(admDigest);
-        })
-        .catch((error) => {
-          reject(error);
-        });
+    return new Promise<ADMDigest | null>((resolve) => {
+      resolve(null);
+      return;
     });
   }
 

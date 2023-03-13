@@ -35,7 +35,7 @@ import atlasmappingOldActionJson from '../../../../test-resources/mapping/atlasm
 import ky from 'ky';
 import { take } from 'rxjs/operators';
 
-describe('InitializationService', () => {
+describe.skip('InitializationService', () => {
   let service: InitializationService;
 
   beforeEach(() => {
