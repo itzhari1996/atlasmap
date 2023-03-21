@@ -40,7 +40,7 @@
     <build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
     <byte-buddy.version>1.13.0</byte-buddy.version>
     <camel.version>2.25.4</camel.version>
-    <camel3.version>3.11.0</camel3.version>
+    <camel3.version>3.20.2</camel3.version>
     <commons-csv.version>1.10.0</commons-csv.version>
     <commons-lang3.version>3.12.0</commons-lang3.version>
     <daffodil.version>3.4.0</daffodil.version>
@@ -759,9 +759,9 @@
             <sourceDirectory>src/main/asciidoc</sourceDirectory>
             <attributes>
               <icons>font</icons>
-              <pagenums />
+              <pagenums/>
               <version>${project.version}</version>
-              <idprefix />
+              <idprefix/>
               <idseparator>-</idseparator>
               <allow-uri-read>true</allow-uri-read>
             </attributes>
@@ -833,7 +833,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <ignore/>
                   </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -847,7 +847,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <ignore/>
                   </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -860,7 +860,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <ignore/>
                   </action>
                 </pluginExecution>
               </pluginExecutions>
