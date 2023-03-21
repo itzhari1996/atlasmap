@@ -60,7 +60,7 @@
     <jetty-maven-plugin.version>11.0.13</jetty-maven-plugin.version>
     <jsonschema2pojo-maven-plugin.version>1.1.3</jsonschema2pojo-maven-plugin.version>
     <junit-jupiter.version>5.9.2</junit-jupiter.version>
-    <kafka.version>3.2.0</kafka.version>
+    <kafka.version>3.4.0</kafka.version>
     <kafka-junit.version>3.2.1</kafka-junit.version>
     <keytool-maven-plugin.version>1.6</keytool-maven-plugin.version>
     <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
@@ -759,9 +759,9 @@
             <sourceDirectory>src/main/asciidoc</sourceDirectory>
             <attributes>
               <icons>font</icons>
-              <pagenums />
+              <pagenums/>
               <version>${project.version}</version>
-              <idprefix />
+              <idprefix/>
               <idseparator>-</idseparator>
               <allow-uri-read>true</allow-uri-read>
             </attributes>
@@ -833,7 +833,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <ignore/>
                   </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -847,7 +847,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <ignore/>
                   </action>
                 </pluginExecution>
                 <pluginExecution>
@@ -860,7 +860,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <ignore/>
                   </action>
                 </pluginExecution>
               </pluginExecutions>
